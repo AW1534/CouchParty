@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/SampleScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: Assets/Scenes/Button Bonanza.unity
+    guid: 5646c7b5a711c284faa98aac18032bf3
+  - enabled: 1
+    path: Assets/Scenes/QrCode.unity
+    guid: cb1504b72e696be4290312d59c193662
+  m_configObjects: {}
