@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CouchPlay : MonoBehaviour
-{
-
-    private static string[] encdec_ = { 
+public class CouchPlay : MonoBehaviour {
+    private static string[] encdec_ = {
         "aA", "aB", "aC", "aD", "aE", "aF", "aG", "aH",
         "aI", "aJ", "aK", "aL", "aM", "aN", "aO", "aP",
         "aQ", "aR", "aS", "aT", "aU", "aV", "aW", "aX",
@@ -37,14 +35,12 @@ public class CouchPlay : MonoBehaviour
         "fY", "fZ",
     };
 
-    private void Awake()
-    {
+    private void Awake() {
         //Debug.Log($"Encoded: {Encode("192.168.2.10")}");
         //Debug.Log($"Decoded: {Decode("efDtaCaK")}");
     }
 
-    public static string Encode(string value)
-    {
+    public static string Encode(string value) {
         string ip = value;
         string[] parts = ip.Split('.'); //[ "192", "168", "2", "10" ];
 
@@ -52,32 +48,30 @@ public class CouchPlay : MonoBehaviour
         return encoded;
     }
 
-    public string Decode(string value)
-    {
+    public string Decode(string value) {
         string decoded = "";
 
         List<string> dec_ = new List<string>();
 
-        string[] parts = { value.Substring(0, 2), value.Substring(2, 2), value.Substring(4, 2), value.Substring(6, 2) };
+        string[] parts = {value.Substring(0, 2), value.Substring(2, 2), value.Substring(4, 2), value.Substring(6, 2)};
 
-        foreach (string str in encdec_)
-        {
+        foreach (string str in encdec_) {
             dec_.Add(str);
         }
 
         int index = 0;
-        foreach (string str in parts)
-        {
+        foreach (string str in parts) {
             decoded += $"{dec_.IndexOf(str)}";
             index++;
-            if (index <= 3) { decoded += ".";  }
+            if (index <= 3) {
+                decoded += ".";
+            }
         }
 
         return decoded;
     }
 
-    private static string EncodeP3(string value)
-    {
+    private static string EncodeP3(string value) {
         int integ = int.Parse(value);
         string _ = "";
 
